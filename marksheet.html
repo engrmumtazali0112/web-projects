@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+         h1 {
+            background-color: rgb(226, 226, 6); /* Set the background color of h1 */
+            display: inline-block; /* Make sure h1 doesn't occupy full width */
+            padding: 10px 20px; /* Add some padding for better visual */
+            border-radius: 10px; /* Add rounded corners */
+            text-align: center; /* Center align the text */
+            }
+    </style>
+    <h1> Calculater </h1>
+    <div class="row">
+        <div class="col-12">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="input1">Input 1:</label>
+                        <input type="text" name="subject1" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="input2">Input 2:</label>
+                        <input type="text" name="subject2" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="input2">Input 3:</label>
+                        <input type="text" name="subject3" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="input2">Input 4:</label>
+                        <input type="text" name="subject4" class="form-control">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="input2">Input 5:</label>
+                        <input type="text" name="subject5" class="form-control">
+                    </div>
+                </div>
+                <!-- Repeat the same structure for other input fields -->
+    
+                <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12">
+            <div class="result-fields">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label>Total:</label>
+                        <input type="text" value="{{ total }}" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Percentage:</label>
+                        <input type="text" value="{{ percent }}" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Grade:</label>
+                        <input type="text" value="{{ Grade }}" class="form-control" readonly>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Number:</label>
+                        <input type="text" value="{{ Number }}" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+</body>
+</html>
+    
+
+
+{% endblock %}
+

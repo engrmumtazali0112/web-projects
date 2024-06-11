@@ -1,0 +1,39 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+    <style>
+        .service-item:hover {
+        background-color: #cfc42a; /* Change to the desired background color */
+    }
+    .service-item .btn:hover {
+    background-color: darkgoldenrod; /* Change to the desired dark yellow color */
+    }
+    </style>
+<!--Services start-->
+            
+<div class="container-fluid">
+    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+        <span class="bg-secondary pr-3">OUR SERVICES</span>
+    </h2>
+    <div class="row g-4 justify-content-center">
+        {% for n in serviceData %}
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="service-item rounded h-100 p-5">
+                <div class="d-flex align-items-center ms-n5 mb-4">
+                    <span class="{{n.service_icon}}"></span>
+                    <h4 class="mb-0" style="margin-left: 10px;">{{n.service_title}}</h4>
+                </div>
+                <p class="mb-4">{{n.service_des | pprint    }}</p>
+                <a class="btn btn-light px-3" href="">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock %}
